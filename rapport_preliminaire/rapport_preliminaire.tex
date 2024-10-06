@@ -144,6 +144,18 @@ Polytechnique Montréal\\}
 
 \subsection{Système de caméra}
 
+La figure \ref{schema_syst}, tirée de l'énoncé du laboratoire \textcolor{red}{Source A}, présente
+l'intérieur du système de caméra sous forme de schéma des lentilles :
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.1]{systeme_optique.png}
+  \caption{Schéma du système optique d'objectif de caméra à zoom et focus ajustable}
+  \label{schema_syst}
+\end{figure}
+
+% Source A : énoncé du lab
+
 \subsubsection{Grossissement}
 
 \subsubsection{Profondeur de champ}
@@ -156,17 +168,75 @@ Polytechnique Montréal\\}
 
 %TODO : présenter ET expliquer le montage
 
+% info du pixel pitch AKA taille d'un pixel (fiche technique de la caméra)
+% https://www.thorlabs.com/catalogpages/obsolete/2020/DCC1645C.pdf
+% est cité plus tard dans l'hypothèse
+
 \subsection{Liste des images à prendre}
 
 \section{Hypothèses}
 
+% TODO : code en annexe
+
+Afin de pouvoir prédire les phénomènes qui pourront être observés en laboratoire, un
+programme Python disponible en annexe a été développé afin de résoudre analytiquement
+le système par la méthode des matrices. Ce programme commence tout d'abord par construire
+la matrice de transfert du système, puis il paramétrise l'écart entre les lentilles selon
+la position de $L_2$ par rapport à $L_1$. Enfin, il calcule les différentes caractéristiques
+qui suivent.
+
 \subsection{Profondeur de champ}
+
+Premièrement, le programme calcule la profondeur de champ en fonction de la position de
+la lentille $L_2$. Le résultat est présenté à la figure \ref{prof_champ_plot}.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.55]{prof_champ.png}
+  \caption{Graphique de la profondeur de champ en fonction de la position de la lentille 
+  $L_2$ suite au calcul de Python}
+  \label{prof_champ_plot}
+\end{figure}
+
+Ainsi, il est possible de faire comme hypothèse que la profondeur du champ n'est pas affectée
+par la position de $L_2$.
 
 \subsection{Résolution}
 
+Ensuite, la figure \ref{gross_plot} montre le grossissement de l'image en fonction de la
+position de $L_2$.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.55]{grossissement.png}
+  \caption{Graphique du grossissement d'une image en fonction de la position de la lentille
+  $L_2$ suite au calcul de Python.}
+  \label{gross_plot}
+\end{figure}
+
+Découlant directement de ce résultat, il est possible de visualiser la résolution en fonction
+de la position de la lentille, tel que montré à la figure \ref{res_plot}. Cela montre la taille
+d'un pixel de la caméra (\textit{pixel pitch}), qui vaut 3.6 micromètres pour la caméra THORLABS, dans le plan objet \textcolor{red}{Source B}.
+
+% Source B : https://www.thorlabs.com/catalogpages/obsolete/2020/DCC1645C.pdf
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.55]{Resolution.png}
+  \caption{Graphique de la résolution de la caméra en fonction de la position de la lentille
+  $L_2$ suite au calcul de Python.}
+  \label{res_plot}
+\end{figure}
+
+Ainsi, il est possible de prédire que le grossissement (qui est inversé en raison du signe 
+négatif) augmente plus la distance entre $L_2$ et $L_1$ augmente. Sans surprise, une relation 
+réciproque est prédite pour la résolution, qui décroît plus cette distance augmente.
+
 \subsection{Facteur de zoom}
 
-
+Enfin, selon la figure \ref{gross_plot}, il est possible de prendre les deux extrêmes de la courbe 
+pour trouver une prédiction dufacteur de zoom. Calculé par le programme, le résultat est un facteur
+d'environ 0.45.
 \clearpage
 
 % \bibliographystyle{unsrtnat}
