@@ -140,7 +140,7 @@ Polytechnique Montréal\\}
 
 \section{Introduction}
 
-Les objectifs de caméras modernes sont des systèmes physiques complexes, permettant de définir l'identité d'une image et dépendent par conséquent de la façon dont l'observateur veut représenter l'objet d'intérêt. Dans le cas le plus simple possible, cas d'étude de ce laboratoire, ces objectifs sont constitués de trois lentilles. Une fixe permettant de former une image nette et deux mobiles, utiles à l'ajustement de paramètres d'observations. Le premier de ces paramètres est lié au grossissement de l'objet observé. Pour prendre un clicher ou filmer une image lointaine, il faudra par exemple opter pour un téléobjectif à fort grossissement, ce qui n'est pas le cas lorsque le but est de faire un portrait rapproché. Cependant, décoller un portrait de l'arrière plan permet souvent de le mettre en valeur en le faisant ressortir. Ce flou recherché derrière l'objet observé est lié au deuxième paramètre étudié, que l'on appelle : profondeur de champ. Elle détermine le facteur de netteté associée à un éloignement vis-à-vis du point focal. Une grande profondeur de champ permettra donc de détailler l'arrière plan tandis qu'une faible profondeur de champ le floutera. Un dernier paramètre, davantage lié au système optique complet de l'objectif et de la mise en relation de ses éléments, nommé vignettage, définit l'assombrissement des bords de l'image en raison de l'ouverture d'arrêt. Le but de ce laboratoire est donc de caractériser un objectif de caméra simple, composé de trois lentilles. Les attentes sont de se familiariser et comprendre l'impact des paramètres d'observation de l'objectif sur une image enregistrée, tout en continuant de développer des habilités liée à l'alignement de systèmes optiques. Le présent rapport, présente la préparation à ce laboratoire, de la compréhension théorique du système étudié, à la méthodologie prévue pour ses manipulations ainsi que les hypothèses émises quant à leurs résultats. 
+Les objectifs de caméras modernes sont des systèmes physiques complexes, permettant de définir l'identité d'une image et dépendent, par conséquent, de la façon dont l'observateur veut représenter l'objet d'intérêt. Dans le cas le plus simple possible, soit le cas d'étude de ce laboratoire, ces objectifs sont constitués de trois lentilles : une fixe, permettant de former une image nette, et deux mobiles, utiles à l'ajustement de paramètres d'observations. Le premier de ces paramètres est lié au grossissement de l'objet observé. Pour prendre une photo ou filmer une image lointaine, il faudra, par exemple, opter pour un téléobjectif à fort grossissement, ce qui n'est pas le cas lorsque le but est de faire un portrait rapproché. Cependant, décoller un portrait de l'arrière plan permet souvent de le mettre en valeur en le faisant ressortir. Ce flou recherché derrière l'objet observé est lié au deuxième paramètre étudié, appelé la profondeur de champ. Elle détermine le facteur de netteté associé à un éloignement vis-à-vis du point focal. Une grande profondeur de champ permettra donc de détailler l'arrière plan tandis qu'une faible profondeur de champ le flouera. Un dernier paramètre, davantage lié au système optique complet de l'objectif et de la mise en relation de ses éléments, nommé vignettage, définit l'assombrissement des bords de l'image en raison de l'ouverture d'arrêt. Le but de ce laboratoire est donc de caractériser un objectif de caméra simple, composé de trois lentilles. Les attentes sont de se familiariser et comprendre l'impact des paramètres d'observation de l'objectif sur une image enregistrée, tout en continuant de développer des habilités liée à l'alignement de systèmes optiques. Le présent rapport, présente la préparation à ce laboratoire, de la compréhension théorique du système étudié, à la méthodologie prévue pour ses manipulations ainsi que les hypothèses émises quant à leurs résultats. 
 
 \section{Théorie}
 
@@ -164,6 +164,22 @@ La profondeur de champ décrit la distance autour du plan de mise au point avec 
 Le vignettage, phénomène photographique, correspond à une diminution de la lumiosité vers les périphéries de l'image. Ce phénomène peut résulter de la conception optique, soit l'ajout d'une ouverture d'arrêt afin de limiter la lumière entrante, une obstruction, ou encore, la focalisation \textcolor{red}{(Source 3)}.
 
 % Source 3 : https://www.lesnumeriques.com/photo/comprendre-le-vignetage-pu121251.html
+
+\subsection{Résolution}
+La résolution, pour un système optique, correspond à la capacité de reproduire les détails d'une image, c'est-à-dire la distance minimale à laquelle deux points sur l'axe optique peuvent être distingués \textcolor{red}{(Source D)}. La résolution dépend de certains paramètres, tels que la longueur d'onde, l'ouverture d'arrêt, et le système lui-même \textcolor{red}{(Source E)}. 
+
+% j'ai pas accès aux sources, désolée je peux pas être plus précise
+% Source D : source du premier rapport fouquet_improving_2015
+% Source E : Source premier rapport jonkman_18_2003
+
+
+\subsection{Lentilles optiques}
+Les lentilles optiques se catégorisent en quelques types, notamment les lentilles convergentes et les divergentes. Celles-ci ont pour fonction de concentrer ou de disperser les rayons traversant un système à l'aide du principe de réfraction. Dans le cas des lentilles convergentes, celles-ci permettent à des faisceaux parallèles de converger en un point spécifique de l'axe optique, soit le point focal \textcolor{red}{(Source F)}. Ce point est situé à une certaine longueur du centre de la lentille, nommée la distance focale. 
+
+Les lentilles divergentes, pour leur part, permettent de disperser les faisceaux, et de ne former qu'une tâche lumineuse. Contrairement aux lentilles convergentes, le point focal des lentilles divergentes se situent dans l'espace image et correspond au prolongement des rayons divergents \textcolor{red}{(Source G)}. 
+
+% Source F : source premier rapport noauthor_thin_nodate
+% Source G : pdf que je t'ai envoyé
 
 \subsection{Méthode des matrices}
 La méthode des matrices, également connue sous le nom d'optique matricielle, est une technique de résolution utilisée en optique complexe. Cette méthode permet d'étudier le comportement des faisceaux à travers un système optique à l'aide de l'algèbre linéaire. De cette manière, cette technique repose sur les relations linéaires entre les grandeurs entrantes et sortantes, permettant d'utiliser une matrice (2$\times$2) pour exprimer les transformations subies par ces grandeurs. Lorsqu'un rayon traverse un système optique, tel qu'illustré dans la figure ci-dessous, celui-ci est caractérisé par des paramètres d'entrée, soient un angle $\theta_1$ et une hauteur $x_1$, ainsi que des paramètres de sortie, soient un angle $\theta_2$ et une hauteur $x_2$.
@@ -265,16 +281,16 @@ La matrice de transfert $M$, définie à l'aide de la modélisation mathématiqu
 
 \section{Méthodologie}
 
-La méthode utilisée pour ce laboratoire vise à caractériser un objectif de caméra simple, composé de trois lentilles. La figure \ref{montage} présente sous la forme d'un schéma et d'une photographie, le montage utilisé, ainsi que son système optique. 
+La méthode utilisée pour ce laboratoire vise à caractériser un objectif de caméra simple, composé de trois lentilles. La figure \ref{montage} présente sous la forme d'un schéma et d'une photographie, le montage utilisé ainsi que son système optique. 
 
 \begin{figure}[H]
   \centering
-  \includegraphics[scale=0.78]{Montage laboratoire 2.png}
+  \includegraphics[scale=0.45]{Montage laboratoire 2.png}
   \caption{Schéma du système optique (en haut) du montage (en bas) utilisé pour le laboratoire.}
   \label{montage}
 \end{figure}
 
-Le matériel utilisé pour ce montage étant : 
+Le matériel utilisé pour ce montage est le suivant : 
 
 \begin{itemize}
     \item Lentille $L_1 = 150 mm$, $\phi_1 = 25.4 mm$
@@ -287,7 +303,7 @@ Le matériel utilisé pour ce montage étant :
     \item Pièces optomécaniques nécessaires (BA1, PH2, PH3, TR2, TR3, LMR1, ...)
 \end{itemize}
 
-La première étape consiste à aligner le montage, en utilisant des iris d'alignement et en maximisant le focus sur la caméra. Il faudra ensuite, pour chaque paramètre établir une série de mesures en fonction de la variable d'intérêt. La liste des clichés à prendre est : 
+La première étape consiste à aligner le montage, en utilisant des iris d'alignement et en maximisant le focus sur la caméra. Il faudra ensuite, pour chaque paramètre, établir une série de mesures en fonction de la variable d'intérêt. La liste des clichés à prendre est : 
 
 \begin{itemize}
     \item La profondeur de champ à 1 m (2 positions extrêmes du zoom)
@@ -296,7 +312,7 @@ La première étape consiste à aligner le montage, en utilisant des iris d'alig
     \item Image d’objet à l’infini (2 positions extrêmes du zoom)
 \end{itemize}
 
-Dans tous les cas, les clichés seront à prendre en double, pour chacune des valeurs extrêmes de zoom. La lentille $L_2$ sera donc toujours placée aux extrémités de sa plage de déplacement. Pour ce qui est de $L_3$, elle sera positionnée de sorte que l'objet d'intérêt soit toujours au focus. L'objet imagé sera positionné en fonction du paramètre à mesurer. A un mètre pour le grossissement, la résolution et à un mètre puis l'infini pour le vignetting. Dans le cas de la profondeur de champ, puisqu'elle nécessite de mesurer une plage de valeur, l'objet sera positionné à un mètre de l'objectif, puis avancé et ensuite reculé jusqu'à sortir du plan focal, afin de déterminer la distance entre les valeurs d'avancement et d'éloignement maximum.
+Dans tous les cas, les clichés seront à prendre en double, pour chacune des valeurs extrêmes de zoom. La lentille $L_2$ sera donc toujours placée aux extrémités de sa plage de déplacement. Pour ce qui est de $L_3$, elle sera positionnée de sorte que l'objet d'intérêt soit toujours au focus. L'objet imagé sera positionné en fonction du paramètre à mesurer, soit à un mètre pour le grossissement et la résolution, et à un mètre puis l'infini pour le vignettage. Dans le cas de la profondeur de champ, puisqu'elle nécessite de mesurer une plage de valeur, l'objet sera positionné à un mètre de l'objectif, puis avancé et ensuite reculé jusqu'à sortir du plan focal, afin de déterminer la distance entre les valeurs d'avancement et d'éloignement maximum.
 
 \section{Hypothèses}
 
