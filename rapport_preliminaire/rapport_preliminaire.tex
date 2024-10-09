@@ -144,6 +144,54 @@ Les objectifs de caméras modernes sont des systèmes physiques complexes, perme
 
 \section{Théorie}
 
+\subsection{Grossissement}
+Le grossissement correspond à l'augmentation apparente de la taille d'un objet lorsque celui-ci est observé à travers un système optique. En termes techniques, il s'agit d'un rapport entre la taille apparente de l'image et celle réelle \textcolor{red}{(Source B)}. 
+
+Avec le grossissement, il est possible de déterminer le facteur de zoom. Ce facteur, offrant une description de l'agrandissement ou de la réduction des images, est le ratio entre le grossissement maximal et le grossissement minimal obtenu \textcolor{red}{(Source C)}.
+
+% Source B : https://uel.unisciel.fr/physique/optigeo/optigeo_ch17/co/apprendre_ch17_04.html#:~:text=Le%20grossissement%20est%20un%20nombre,distance%20minimale%20de%20vision%20distincte.
+
+% Source C : https://www.choisir-videoprojecteur.fr/distance-taille-ecran#:~:text=Le%20zoom%20optique%20correspond%20au,de%20la%20qualit%C3%A9%20(r%C3%A9solution).
+
+\subsection{Profondeur de champ}
+La profondeur de champ décrit la distance autour du plan de mise au point avec laquelle les objets apparaissent suffisamment nets. En d'autres termes, ce concept optique réfère à la distance entre les points les plus rapprochés et ceux les plus éloignés du sujet qui sont reproduits avec une netteté acceptable dans une image \textcolor{red}{(Source 1)}. Appliquée à plusieurs sytèmes optiques tels que les caméras et les microscopes, cette notion de profondeur est influencée par les paramètres suivants : la distance focale, l'ouverture de l'objectif, et la distance de l'objet \textcolor{red}{(Source 2)}. 
+
+% Source 1 : https://www.edmundoptics.fr/knowledge-center/application-notes/imaging/depth-of-field-and-depth-of-focus/#:~:text=La%20DOF%20d'un%20objectif,de%20mise%20au%20point%20optimale.
+
+% Source 2 : Notes de cours L7_s4.pdf
+
+\subsection{Vignettage}
+Le vignettage, phénomène photographique, correspond à une diminution de la lumiosité vers les périphéries de l'image. Ce phénomène peut résulter de la conception optique, soit l'ajout d'une ouverture d'arrêt afin de limiter la lumière entrante, une obstruction, ou encore, la focalisation \textcolor{red}{(Source 3)}.
+
+% Source 3 : https://www.lesnumeriques.com/photo/comprendre-le-vignetage-pu121251.html
+
+\subsection{Méthode des matrices}
+La méthode des matrices, également connue sous le nom d'optique matricielle, est une technique de résolution utilisée en optique complexe. Cette méthode permet d'étudier le comportement des faisceaux à travers un système optique à l'aide de l'algèbre linéaire. De cette manière, cette technique repose sur les relations linéaires entre les grandeurs entrantes et sortantes, permettant d'utiliser une matrice (2$\times$2) pour exprimer les transformations subies par ces grandeurs. Lorsqu'un rayon traverse un système optique, tel qu'illustré dans la figure ci-dessous, celui-ci est caractérisé par des paramètres d'entrée, soient un angle $\theta_1$ et une hauteur $x_1$, ainsi que des paramètres de sortie, soient un angle $\theta_2$ et une hauteur $x_2$.
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.5]{methode_math.png}
+  \caption{Schéma d'un transfert de rayon dans un système optique.}
+  \label{methode_math}
+\end{figure}
+Avec ces schémas optiques, il est possible de définir, pour chaque élément du système en question, une matrice de la forme suivante.
+\begin{gather}
+  \begin{pmatrix}
+    x_2 \\
+    \theta_2 \\
+  \end{pmatrix}=
+  \begin{pmatrix}
+    A & B \\
+    C & D \\
+  \end{pmatrix}
+  \begin{pmatrix}
+    x_1 \\
+    \theta_1 \\
+  \end{pmatrix}
+\end{gather}
+Ainsi, en fonction des différentes composantes du système optique, telles qu'une lentille, un miroir ou un milieu de propagation, la matrice, illustée à l'équation (2), prend les formes appropriées \textcolor{red}{(Source 4)}.
+
+% Source 4 : Notes de cours L6_s3.pdf
+
 \subsection{Système de caméra}
 
 La figure \ref{schema_syst}, tirée de l'énoncé du laboratoire \textcolor{red}{Source A}, présente
@@ -151,26 +199,69 @@ l'intérieur du système de caméra sous forme de schéma des lentilles :
 
 \begin{figure}[H]
   \centering
-  \includegraphics[scale=0.1]{systeme_optique.png}
+  \includegraphics[scale=0.2]{systeme_optique.png}
   \caption{Schéma du système optique d'objectif de caméra à zoom et focus ajustable}
   \label{schema_syst}
 \end{figure}
 
+Ce schéma présente le parcours des faisceaux à travers l'objectif d'une caméra à focus ajustable. De ce fait, il est possible d'observer que le rayon se propage, d'abord, dans la caméra, puis rencontre une première lentille. Cette lentille ($L_1$) convergente permet aux rayons de se diriger vers une seconde lentille ($L_2$) qui, pour sa part, provoque la divergence de ces rayons. Après avoir traversé cette seconde lentille, ceux-ci se dirige vers une troisième et dernière lentille ($L_3$), convergeant les faisceaux en un point afin de former l'image finale. La maniabilité des lentilles $L_2$ et $L_3$ permettent d'ajuster les facteurs de grossissement et de focus de la caméra. Ainsi, à partir de la figure ci-dessus, la méthode des matrices, expliquée à la section 2.4, est appliquée afin de caractériser le système et de déterminer ces dits facteurs.
+
 % Source A : énoncé du lab
 
-\subsubsection{Grossissement}
-Le grossissement correspond à l'augmentation apparente de la taille d'un objet lorsque celui-ci est observé à travers un système optique. En termes techniques, il s'agit d'un rapport entre la taille apparente de l'image et celle réelle \textcolor{red}{(Source B)}.
-
-% Source B : https://uel.unisciel.fr/physique/optigeo/optigeo_ch17/co/apprendre_ch17_04.html#:~:text=Le%20grossissement%20est%20un%20nombre,distance%20minimale%20de%20vision%20distincte.
-
-\subsubsection{Profondeur de champ}
-La profondeur de champ décrit la distance autour du plan de mise au point avec laquelle les objets apparaissent suffisamment nets. En d'autres termes, ce concept optique réfère à la distance entre les points les plus rapprochés et ceux les plus éloignés du sujet qui sont reproduits avec une netteté acceptable dans une image \textcolor{red}{(Source 1)}. Appliquée à plusieurs sytèmes optiques tels que les caméras et les microscopes, cette notion de profondeur est influencée par les paramètres suivants : la distance focale, l'ouverture de l'objectif, et la distance de l'objet \textcolor{red}{(Source 2)}. 
-
-% Source 1 : https://www.edmundoptics.fr/knowledge-center/application-notes/imaging/depth-of-field-and-depth-of-focus/#:~:text=La%20DOF%20d'un%20objectif,de%20mise%20au%20point%20optimale.
-
-% Source 2 : Notes de cours L7_s4.pdf
-
 \subsection{Modélisation mathématique par matrice de transfert}
+À l'aide de la figure \ref{schema_syst}, représentant visuellement les rayons à travers le système optique, il est possible de poser une matrice de transfert $M$ de la manière suivante :
+\begin{equation}
+  M=M_{T7}M_{F6}M_{T5}M_{F4}M_{T3}M_{F2}M_{T1}
+\end{equation}
+Chacune de ces matrices représentent une composante du système optique. Ces composantes sont les suivantes :
+\begin{itemize}
+  \item $M_{T1}$ est une matrice de translation de la distance entre le plan objet et la lentille $L_1$
+  \item $M_{F2}$ est une matrice de lentille mince pour la lentille $L_1$
+  \item $M_{T3}$ est une matrice de translation de la distance entre les lentilles $L_1$ et $L_2$
+  \item $M_{F4}$ est une matrice de lentille mince pour la lentille $L_2$
+  \item $M_{T5}$ est une matrice de translation de la distance entre les lentilles $L_2$ et $L_3$
+  \item $M_{F6}$ est une matrice de lentille mince pour la lentille $L_3$
+  \item $M_{T7}$ est une matrice de translation de la distance entre la lentille $L_3$ et le plan image
+\end{itemize}
+La forme des matrices de translation est donnée par :
+\begin{gather}
+  M_T=
+  \begin{bmatrix}
+    1 & d \\
+    0 & 1 \\
+  \end{bmatrix}
+\end{gather}
+Où $d$ correspond à la longueur de la translation selon l'axe optique, soit la distance entre deux points données. Les matrices de lentille mince sont définies par la forme suivante :
+\begin{gather}
+  M_T=
+  \begin{bmatrix}
+    1 & 0 \\
+    -\frac{1}{f} & 1 \\
+  \end{bmatrix}
+\end{gather}
+Où $f$ est la distance focale de la lentille. Les rayons traversant ces matrices sont caractérisés, tel mentionné dans la section 2.4, par certains paramètres soient les angles et les hauteurs entrantes et sortantes. Ceux-ci sont utiles à la paramétrisation de la distance entre les lentilles. Pour ce faire, un rayon initial $r_i$ à une hauteur $y_i$, soit nulle, et un angle $\alpha_i$, quelconque, partant du plan objet, et un rayon final $r_f$ à une hauteur $y_f$, aussi nulle, et un angle $\alpha_f$ sont considérés. Ces faisceaux permettent la formation de l'équation suivante :
+\begin{gather}
+  \begin{bmatrix}
+    0 \\
+    \alpha_f \\
+  \end{bmatrix}=M
+  \begin{bmatrix}
+    0 \\
+    \alpha_i \\
+  \end{bmatrix}
+\end{gather}
+Les hauteurs $y_i$ et $y_f$ sont nulles puisque les rayons de lumière commence à un certain point sur l'axe optique et se termine à un autre point sur l'axe optique. En résolvant ce système matricielle, deux solutions, sous forme de racine, sont obtenues. Afin de déterminer laquelle de ces solutions est celle désirée, elles sont vérifiées à l'aide des différentes distances possibles entre les lentilles. De cette manière, en calculant les solutions avec les positionnements extrêmes de la seconde lentille $L_2$, soit à la distance minimale et maximale, la solution offrant une racine position et réelle est considérée comme la paramétrisation optimale.
+
+\subsubsection{Paramétrisation du grossissement}
+La matrice de transfert $M$, définie à l'aide de la modélisation mathématique précédente, est notée de la manière suivante :
+\begin{gather}
+  M=
+  \begin{bmatrix}
+    A & B \\
+    C & D \\
+  \end{bmatrix}
+\end{gather}
+À partir de cette notation, il est possible de déterminer le grossissement d'un système, correspondant à la valeur de $A$. De cette manière, la paramétrisation du grossissement en fonction de la distance entre les lentilles peut être visualisée.
 
 \section{Méthodologie}
 
