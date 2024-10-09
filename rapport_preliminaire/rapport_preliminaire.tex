@@ -4,7 +4,7 @@
 \usepackage{graphicx}
 \usepackage{etoolbox}
 \apptocmd{\sloppy}{\hbadness 10000\relax}{}{}
-% \usepackage[numbers]{natbib}
+ \usepackage[numbers]{natbib}
 \usepackage[T1]{fontenc}
 \usepackage{ragged2e}
 \usepackage[french]{babel}
@@ -145,41 +145,23 @@ Les objectifs de caméras modernes sont des systèmes physiques complexes, perme
 \section{Théorie}
 
 \subsection{Grossissement}
-Le grossissement correspond à l'augmentation apparente de la taille d'un objet lorsque celui-ci est observé à travers un système optique. En termes techniques, il s'agit d'un rapport entre la taille apparente de l'image et celle réelle \textcolor{red}{(Source B)}. 
+Le grossissement correspond à l'augmentation apparente de la taille d'un objet lorsque celui-ci est observé à travers un système optique. En termes techniques, il s'agit d'un rapport entre la taille apparente de l'image et celle réelle \cite{blondeau_grossissement_2023}.
 
-Avec le grossissement, il est possible de déterminer le facteur de zoom. Ce facteur, offrant une description de l'agrandissement ou de la réduction des images, est le ratio entre le grossissement maximal et le grossissement minimal obtenu \textcolor{red}{(Source C)}.
-
-% Source B : https://uel.unisciel.fr/physique/optigeo/optigeo_ch17/co/apprendre_ch17_04.html#:~:text=Le%20grossissement%20est%20un%20nombre,distance%20minimale%20de%20vision%20distincte.
-
-% Source C : https://www.choisir-videoprojecteur.fr/distance-taille-ecran#:~:text=Le%20zoom%20optique%20correspond%20au,de%20la%20qualit%C3%A9%20(r%C3%A9solution).
+Avec le grossissement, il est possible de déterminer le facteur de zoom. Ce facteur, offrant une description de l'agrandissement ou de la réduction des images, est le ratio entre le grossissement maximal et le grossissement minimal obtenu \cite{noauthor_videoprojecteur_2024}.
 
 \subsection{Profondeur de champ}
-La profondeur de champ décrit la distance autour du plan de mise au point avec laquelle les objets apparaissent suffisamment nets. En d'autres termes, ce concept optique réfère à la distance entre les points les plus rapprochés et ceux les plus éloignés du sujet qui sont reproduits avec une netteté acceptable dans une image \textcolor{red}{(Source 1)}. Appliquée à plusieurs sytèmes optiques tels que les caméras et les microscopes, cette notion de profondeur est influencée par les paramètres suivants : la distance focale, l'ouverture de l'objectif, et la distance de l'objet \textcolor{red}{(Source 2)}. 
-
-% Source 1 : https://www.edmundoptics.fr/knowledge-center/application-notes/imaging/depth-of-field-and-depth-of-focus/#:~:text=La%20DOF%20d'un%20objectif,de%20mise%20au%20point%20optimale.
-
-% Source 2 : Notes de cours L7_s4.pdf
+La profondeur de champ décrit la distance autour du plan de mise au point avec laquelle les objets apparaissent suffisamment nets. En d'autres termes, ce concept optique réfère à la distance entre les points les plus rapprochés et ceux les plus éloignés du sujet qui sont reproduits avec une netteté acceptable dans une image \cite{hollows_depth_2023}. Appliquée à plusieurs sytèmes optiques tels que les caméras et les microscopes, cette notion de profondeur est influencée par les paramètres suivants : la distance focale, l'ouverture de l'objectif, et la distance de l'objet \cite{leblond_semaine_2024}. 
 
 \subsection{Vignettage}
-Le vignettage, phénomène photographique, correspond à une diminution de la lumiosité vers les périphéries de l'image. Ce phénomène peut résulter de la conception optique, soit l'ajout d'une ouverture d'arrêt afin de limiter la lumière entrante, une obstruction, ou encore, la focalisation \textcolor{red}{(Source 3)}.
-
-% Source 3 : https://www.lesnumeriques.com/photo/comprendre-le-vignetage-pu121251.html
+Le vignettage, phénomène photographique, correspond à une diminution de la lumiosité vers les périphéries de l'image. Ce phénomène peut résulter de la conception optique, soit l'ajout d'une ouverture d'arrêt afin de limiter la lumière entrante, une obstruction, ou encore, la focalisation \cite{cognard_comprendre_2017}.
 
 \subsection{Résolution}
-La résolution, pour un système optique, correspond à la capacité de reproduire les détails d'une image, c'est-à-dire la distance minimale à laquelle deux points sur l'axe optique peuvent être distingués \textcolor{red}{(Source D)}. La résolution dépend de certains paramètres, tels que la longueur d'onde, l'ouverture d'arrêt, et le système lui-même \textcolor{red}{(Source E)}. 
-
-% j'ai pas accès aux sources, désolée je peux pas être plus précise
-% Source D : source du premier rapport fouquet_improving_2015
-% Source E : Source premier rapport jonkman_18_2003
-
+La résolution, pour un système optique, correspond à la capacité de reproduire les détails d'une image, c'est-à-dire la distance minimale à laquelle deux points sur l'axe optique peuvent être distingués \cite{fouquet_improving_2015}, tels que la longueur d'onde, l'ouverture d'arrêt, et le système lui-même \cite{jonkman_18_2003}. Ici, c'est donc la taille d'un pixel de caméra dans l'espace objet.
 
 \subsection{Lentilles optiques}
-Les lentilles optiques se catégorisent en quelques types, notamment les lentilles convergentes et les divergentes. Celles-ci ont pour fonction de concentrer ou de disperser les rayons traversant un système à l'aide du principe de réfraction. Dans le cas des lentilles convergentes, celles-ci permettent à des faisceaux parallèles de converger en un point spécifique de l'axe optique, soit le point focal \textcolor{red}{(Source F)}. Ce point est situé à une certaine longueur du centre de la lentille, nommée la distance focale. 
+Les lentilles optiques se catégorisent en quelques types, notamment les lentilles convergentes et les divergentes. Celles-ci ont pour fonction de concentrer ou de disperser les rayons traversant un système à l'aide du principe de réfraction. Dans le cas des lentilles convergentes, celles-ci permettent à des faisceaux parallèles de converger en un point spécifique de l'axe optique, soit le point focal \cite{noauthor_thin_nodate}, nommée la distance focale. 
 
-Les lentilles divergentes, pour leur part, permettent de disperser les faisceaux, et de ne former qu'une tâche lumineuse. Contrairement aux lentilles convergentes, le point focal des lentilles divergentes se situent dans l'espace image et correspond au prolongement des rayons divergents \textcolor{red}{(Source G)}. 
-
-% Source F : source premier rapport noauthor_thin_nodate
-% Source G : pdf que je t'ai envoyé
+Les lentilles divergentes, pour leur part, permettent de disperser les faisceaux, et de ne former qu'une tâche lumineuse. Contrairement aux lentilles convergentes, le point focal des lentilles divergentes se situent dans l'espace image et correspond au prolongement des rayons divergents \cite{zimmermann_lentilles_2015}. 
 
 \subsection{Méthode des matrices}
 La méthode des matrices, également connue sous le nom d'optique matricielle, est une technique de résolution utilisée en optique complexe. Cette méthode permet d'étudier le comportement des faisceaux à travers un système optique à l'aide de l'algèbre linéaire. De cette manière, cette technique repose sur les relations linéaires entre les grandeurs entrantes et sortantes, permettant d'utiliser une matrice (2$\times$2) pour exprimer les transformations subies par ces grandeurs. Lorsqu'un rayon traverse un système optique, tel qu'illustré dans la figure ci-dessous, celui-ci est caractérisé par des paramètres d'entrée, soient un angle $\theta_1$ et une hauteur $x_1$, ainsi que des paramètres de sortie, soient un angle $\theta_2$ et une hauteur $x_2$.
@@ -189,7 +171,7 @@ La méthode des matrices, également connue sous le nom d'optique matricielle, e
   \caption{Schéma d'un transfert de rayon dans un système optique.}
   \label{methode_math}
 \end{figure}
-Avec ces schémas optiques, il est possible de définir, pour chaque élément du système en question, une matrice de la forme suivante.
+Avec ces schémas optiques, il est possible de définir, pour chaque élément du système en question, une matrice de la forme suivante :
 \begin{gather}
   \begin{pmatrix}
     x_2 \\
@@ -204,13 +186,12 @@ Avec ces schémas optiques, il est possible de définir, pour chaque élément d
     \theta_1 \\
   \end{pmatrix}
 \end{gather}
-Ainsi, en fonction des différentes composantes du système optique, telles qu'une lentille, un miroir ou un milieu de propagation, la matrice, illustée à l'équation (2), prend les formes appropriées \textcolor{red}{(Source 4)}.
+Ainsi, en fonction des différentes composantes du système optique, telles qu'une lentille, un miroir ou un milieu de propagation, la matrice, illustée à l'équation (2), prend les formes appropriées \cite{leblond_semaine_2024-1}.
 
-% Source 4 : Notes de cours L6_s3.pdf
 
 \subsection{Système de caméra}
 
-La figure \ref{schema_syst}, tirée de l'énoncé du laboratoire \textcolor{red}{Source A}, présente
+La figure \ref{schema_syst}, tirée de l'énoncé du laboratoire \cite{sheehy_experience_2024}, présente
 l'intérieur du système de caméra sous forme de schéma des lentilles :
 
 \begin{figure}[H]
@@ -222,7 +203,6 @@ l'intérieur du système de caméra sous forme de schéma des lentilles :
 
 Ce schéma présente le parcours des faisceaux à travers l'objectif d'une caméra à focus ajustable. De ce fait, il est possible d'observer que le rayon se propage, d'abord, dans la caméra, puis rencontre une première lentille. Cette lentille ($L_1$) convergente permet aux rayons de se diriger vers une seconde lentille ($L_2$) qui, pour sa part, provoque la divergence de ces rayons. Après avoir traversé cette seconde lentille, ceux-ci se dirige vers une troisième et dernière lentille ($L_3$), convergeant les faisceaux en un point afin de former l'image finale. La maniabilité des lentilles $L_2$ et $L_3$ permettent d'ajuster les facteurs de grossissement et de focus de la caméra. Ainsi, à partir de la figure ci-dessus, la méthode des matrices, expliquée à la section 2.4, est appliquée afin de caractériser le système et de déterminer ces dits facteurs.
 
-% Source A : énoncé du lab
 
 \subsection{Modélisation mathématique par matrice de transfert}
 À l'aide de la figure \ref{schema_syst}, représentant visuellement les rayons à travers le système optique, il est possible de poser une matrice de transfert $M$ de la manière suivante :
@@ -266,7 +246,7 @@ Où $f$ est la distance focale de la lentille. Les rayons traversant ces matrice
     \alpha_i \\
   \end{bmatrix}
 \end{gather}
-Les hauteurs $y_i$ et $y_f$ sont nulles puisque les rayons de lumière commence à un certain point sur l'axe optique et se termine à un autre point sur l'axe optique. En résolvant ce système matricielle, deux solutions, sous forme de racine, sont obtenues. Afin de déterminer laquelle de ces solutions est celle désirée, elles sont vérifiées à l'aide des différentes distances possibles entre les lentilles. De cette manière, en calculant les solutions avec les positionnements extrêmes de la seconde lentille $L_2$, soit à la distance minimale et maximale, la solution offrant une racine position et réelle est considérée comme la paramétrisation optimale.
+Les hauteurs $y_i$ et $y_f$ sont nulles puisque les rayons de lumière commencent à un certain point sur l'axe optique et se termine à un autre point sur l'axe optique. En résolvant ce système matriciel, deux solutions, sous forme de racine, sont obtenues. Afin de déterminer laquelle de ces solutions est celle désirée, elles sont vérifiées à l'aide des différentes distances possibles entre les lentilles. De cette manière, en calculant les solutions avec les positionnements extrêmes de la seconde lentille $L_2$, soit à la distance minimale et maximale, la solution offrant une racine position et réelle est considérée comme la paramétrisation optimale.
 
 \subsubsection{Paramétrisation du grossissement}
 La matrice de transfert $M$, définie à l'aide de la modélisation mathématique précédente, est notée de la manière suivante :
@@ -316,10 +296,8 @@ Dans tous les cas, les clichés seront à prendre en double, pour chacune des va
 
 \section{Hypothèses}
 
-% TODO : code en annexe
-
 Afin de pouvoir prédire les phénomènes qui pourront être observés en laboratoire, un
-programme Python disponible en annexe a été développé afin de résoudre analytiquement
+programme Python a été développé afin de résoudre analytiquement
 le système par la méthode des matrices. Ce programme commence tout d'abord par construire
 la matrice de transfert du système, puis il paramétrise l'écart entre les lentilles selon
 la position de $L_2$ par rapport à $L_1$. Enfin, il calcule les différentes caractéristiques
@@ -356,7 +334,7 @@ position de $L_2$.
 
 Découlant directement de ce résultat, il est possible de visualiser la résolution en fonction
 de la position de la lentille, tel que montré à la figure \ref{res_plot}. Cela montre la taille
-d'un pixel de la caméra (\textit{pixel pitch}), qui vaut 3.6 micromètres pour la caméra THORLABS, dans le plan objet \textcolor{red}{Source B}.
+d'un pixel de la caméra (\textit{pixel pitch}), qui vaut 3.6 micromètres pour la caméra THORLABS, dans le plan objet \cite{thorlabs}.
 
 % Source B : https://www.thorlabs.com/catalogpages/obsolete/2020/DCC1645C.pdf
 
@@ -379,7 +357,7 @@ pour trouver une prédiction dufacteur de zoom. Calculé par le programme, le r�
 d'environ 0.45.
 \clearpage
 
-% \bibliographystyle{unsrtnat}
-% \bibliography{My_Library}
+\bibliographystyle{unsrtnat}
+\bibliography{camera_prelab.bib}
 
 \end{document}

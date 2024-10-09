@@ -1,0 +1,85 @@
+\begin{thebibliography}{12}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Blondeau and Vindevoghel(2023)]{blondeau_grossissement_2023}
+Jean-Marie Blondeau and Monique Vindevoghel.
+\newblock Grossissement [{Qualités} d'un instrument], 2023.
+\newblock URL
+  \url{https://uel.unisciel.fr/physique/optigeo/optigeo_ch17/co/apprendre_ch17_04.html}.
+
+\bibitem[noa(2024{\natexlab{a}})]{noauthor_videoprojecteur_2024}
+Vidéoprojecteur : distance/taille écran et rapport de projection,
+  2024{\natexlab{a}}.
+\newblock URL
+  \url{https://www.choisir-videoprojecteur.fr/distance-taille-ecran}.
+
+\bibitem[Hollows and James(2023)]{hollows_depth_2023}
+Gregory Hollows and Nicholas James.
+\newblock Depth of {Field} and {Depth} of {Focus}, 2023.
+\newblock URL
+  \url{https://www.edmundoptics.fr/knowledge-center/application-notes/imaging/depth-of-field-and-depth-of-focus/}.
+
+\bibitem[Leblond(2024{\natexlab{a}})]{leblond_semaine_2024}
+Frédéric Leblond.
+\newblock Semaine 4 : {Notions} de {Systèmes} {Optiques}, 2024{\natexlab{a}}.
+
+\bibitem[Cognard(2017)]{cognard_comprendre_2017}
+Timothée Cognard.
+\newblock Comprendre le vignettage, November 2017.
+\newblock URL
+  \url{https://www.lesnumeriques.com/photo/comprendre-le-vignetage-pu121251.html}.
+
+\bibitem[Fouquet et~al.(2015)Fouquet, Gilles, Heck, Dos~Santos, Schwartzmann,
+  Cannaya, Morel, Davidson, Trembleau, and Bolte]{fouquet_improving_2015}
+Coralie Fouquet, Jean-François Gilles, Nicolas Heck, Marc Dos~Santos, Richard
+  Schwartzmann, Vidjeacoumary Cannaya, Marie-Pierre Morel, Robert~Stephen
+  Davidson, Alain Trembleau, and Susanne Bolte.
+\newblock Improving {Axial} {Resolution} in {Confocal} {Microscopy} with {New}
+  {High} {Refractive} {Index} {Mounting} {Media}.
+\newblock \emph{PLoS ONE}, 10\penalty0 (3):\penalty0 e0121096, March 2015.
+\newblock ISSN 1932-6203.
+\newblock \doi{10.1371/journal.pone.0121096}.
+\newblock URL \url{https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4379090/}.
+
+\bibitem[Jonkman et~al.(2003)Jonkman, Swoger, Kress, Rohrbach, and
+  Stelzer]{jonkman_18_2003}
+James E.~N. Jonkman, Jim Swoger, Holger Kress, Alexander Rohrbach, and Ernst
+  H.~K. Stelzer.
+\newblock [18] {Resolution} in optical microscopy.
+\newblock In \emph{Methods in {Enzymology}}, volume 360 of \emph{Biophotonics,
+  {Part} {A}}, pages 416--446. Academic Press, January 2003.
+\newblock \doi{10.1016/S0076-6879(03)60122-9}.
+\newblock URL
+  \url{https://www.sciencedirect.com/science/article/pii/S0076687903601229}.
+
+\bibitem[noa(2024{\natexlab{b}})]{noauthor_thin_nodate}
+Thin lens sign conventions, 2024{\natexlab{b}}.
+\newblock URL
+  \url{https://www.khanacademy.org/science/in-in-class-12th-physics-india/in-in-ray-optics-and-optical-instruments/in-in-refraction-in-thin-lenses/a/thin-lens-sign-conventions}.
+
+\bibitem[Zimmermann(2015)]{zimmermann_lentilles_2015}
+Laurent Zimmermann.
+\newblock Les lentilles divergentes, 2015.
+\newblock URL
+  \url{https://clipedia.be/uploads/videos/lentilles-6-lentilles-divergentes.pdf}.
+
+\bibitem[Leblond(2024{\natexlab{b}})]{leblond_semaine_2024-1}
+Frédéric Leblond.
+\newblock Semaine 4 : {Méthode} des {Matrices} et {Applications},
+  2024{\natexlab{b}}.
+
+\bibitem[Sheehy et~al.(2024)Sheehy, Picot, Nguyen, and
+  Zamani]{sheehy_experience_2024}
+Guillaume Sheehy, Fabien Picot, Tien Nguyen, and Esmat Zamani.
+\newblock Expérience 2 : {Objectif} de caméra, September 2024.
+
+\bibitem[tho(2020)]{thorlabs}
+Cmos cameras, 2020.
+\newblock URL
+  \url{https://www.thorlabs.com/catalogpages/obsolete/2020/DCC1645C.pdf}.
+
+\end{thebibliography}
