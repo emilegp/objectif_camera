@@ -174,15 +174,38 @@ La profondeur de champ décrit la distance autour du plan de mise au point avec 
 
 \section{Méthodologie}
 
-\subsection{Montage}
+La méthode utilisée pour ce laboratoire vise à caractériser un objectif de caméra simple, composé de trois lentilles. La figure \ref{montage} présente sous la forme d'un schéma et d'une photographie, le montage utilisé, ainsi que son système optique. 
 
-%TODO : présenter ET expliquer le montage
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.78]{Montage laboratoire 2.png}
+  \caption{Schéma du système optique (en haut) du montage (en bas) utilisé pour le laboratoire.}
+  \label{montage}
+\end{figure}
 
-% info du pixel pitch AKA taille d'un pixel (fiche technique de la caméra)
-% https://www.thorlabs.com/catalogpages/obsolete/2020/DCC1645C.pdf
-% est cité plus tard dans l'hypothèse
+Le matériel utilisé pour ce montage étant : 
 
-\subsection{Liste des images à prendre}
+\begin{itemize}
+    \item Lentille $L_1 = 150 mm$, $\phi_1 = 25.4 mm$
+    \item Lentille $L_2 = -75 mm$, $\phi_1 = 25.4 mm$
+    \item Lentille $L_3 = 75 mm$, $\phi_1 = 25.4 mm$
+    \item Iris ajustable SM1D25
+    \item Tube à lentille ajustable 75 mm (\textit{zoom housing}) SM1NR1
+    \item Plateforme de translation > 25 mm
+    \item Caméra USB Thorlabs DDC1645C
+    \item Pièces optomécaniques nécessaires (BA1, PH2, PH3, TR2, TR3, LMR1, ...)
+\end{itemize}
+
+La première étape consiste à aligner le montage, en utilisant des iris d'alignement et en maximisant le focus sur la caméra. Il faudra ensuite, pour chaque paramètre établir une série de mesures en fonction de la variable d'intérêt. La liste des clichés à prendre est : 
+
+\begin{itemize}
+    \item La profondeur de champ à 1 m (2 positions extrêmes du zoom)
+    \item La résolution à 1 m (2 positions extrêmes du zoom)
+    \item Mesure du vignetting à 1 m et à $\infty$ (2 positions extrêmes du zoom)
+    \item Image d’objet à l’infini (2 positions extrêmes du zoom)
+\end{itemize}
+
+Dans tous les cas, les clichés seront à prendre en double, pour chacune des valeurs extrêmes de zoom. La lentille $L_2$ sera donc toujours placée aux extrémités de sa plage de déplacement. Pour ce qui est de $L_3$, elle sera positionnée de sorte que l'objet d'intérêt soit toujours au focus. L'objet imagé sera positionné en fonction du paramètre à mesurer. A un mètre pour le grossissement, la résolution et à un mètre puis l'infini pour le vignetting. Dans le cas de la profondeur de champ, puisqu'elle nécessite de mesurer une plage de valeur, l'objet sera positionné à un mètre de l'objectif, puis avancé et ensuite reculé jusqu'à sortir du plan focal, afin de déterminer la distance entre les valeurs d'avancement et d'éloignement maximum.
 
 \section{Hypothèses}
 
