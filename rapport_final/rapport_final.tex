@@ -327,15 +327,36 @@ Cette dernière conclusion aide à redéfinir la troisième hypothèse : plus le
 grand, moins la résolution est importante. \textcolor{red}{A FINIR : Emile}.
 
 \subsection{Sources d'erreurs}
+Les divergences des résultats par rapport aux hypothèses émises peuvent être expliquées par certaines causes d'erreurs. Une première cause possible correspond à l'éclairage inconstant de la pièce. Ces fluctuations, causées par l'ouverture et la fermeture de lumières, ont influencé les conditions d'illumination des objets photographiés, notamment en affectant l'exposition, le contraste et la netteté de l'image. Ensuite, lorsque la profondeur de champ a été observée, certaines des photos prises impliquaient de se tenir entre deux tables. Pour ce faire, une personne devait maintenir l'objet à la hauteur de la caméra, causant du mouvement dans la cible. Ce manque de stabilité dans ces prises a entraîné un décalage dans certaines des images. En effet, entre l'enregistrement de l'image et l'ajustement du paramètre observé, il est possible que le manque de stabilité ait provoqué des flous, altérant la qualité de l'image. 
 
-\textcolor{red}{TODO: Laura-Li}
-éclairage non constant (ouverture et fermeture des lumières)
-cible qui bouge quand on était hors de la table
-acquisition longue (software qui save pas tout de suite)
+De plus, l'ouverture de l'iris, correspondant à l'ouverture d'arrêt dans ce système optique, a été changée au cours de l'expérimentation, provoquant une variation dans l'ouverture influence le résultat obtenu. Par exemple, dans le cas de la profondeur de champ et de la résolution, une grande ouverture réduit la profondeur de champ alors qu'elle améliore la résolution et inversement pour une petite ouverture. De ce fait, pour un même point, le profondeur de champ et la résolution varient en fonction de l'iris.
+
+Finalement, une autre cause d'erreur possible est le délai dans l'acquisition des images. Puisque les photos ne s'enregistraient pas exactement au moment choisi, le délai entre l'enregistrement et la capture choisie peut avoir varié dû aux conditions externes, soient, par exemple, l'éclairage et le mouvement de la cible.
 
 \subsection{Réponses aux questions}
+Dans cette expérience, l'iris joue le rôle d'ouverture d'arrêt dans le système optique, c'est-à-dire de réguler la lumiosité passant à travers les lentilles. De cette manière, cette régulation permet à l'ouverture d'effectuer trois fonctions principales : le contrôle de l'exposition, de la profondeur de champ et des aberrations. De cette manière, dans un objectif commercial, l'iris est souvent utilisé pour ajuster l'expostion et, par le fait même, d'améliorer la profondeur de champ de manière précise. En effet, en limitant ou augmentant la lumière entrante, il est possible d'ajuster l'exposition de l'image. Cette variation d'exposition permet de contrôler la zone de netteté de l'objet, soit la profondeur de champ, et les rayons lumineux hors focaux, de sorte que la qualité de l'image soit améliorée en fonction de la taille \textcolor{red}{(Source 1)}. Bien que l'iris octroie plusieurs bénéfices, celui-ci n'est pas toujours nécessaire dans les systèmes optiques. Dans cette expérience, l'iris correspondait à l'ouverture d'arrêt, ce qui n'est pas toujours le cas dans tous les systèmes optiques. Ainsi, dans ces systèmes où l'ouverture d'arrêt correspond à un autre composant, la lumière est régulisée avec ou sans l'utilisation de l'iris.
 
-\textcolor{red}{TODO : Laura-Li}
+Les systèmes optiques, tel que les objectifs de caméra, peuvent entraîner des aberrations malgré l'utilisation d'une ouverture d'arrêt. Parmi les aberrations possibles, il n'existe pas directement d'aberrations plus fréquentes que d'autres. Cependant, deux aberrations communes correspondent aux aberrations sphériques et chromatiques transversales. Les aberrations sphériques surviennent lorsque les rayons se focalisent à des distances différentes dû à leur interaction avec les lentilles. En d'autres termes, en fonction du point de contact avec les lentilles ou les miroirs, les faisceaux ne se dirigent pas tout à fait au même point, diminuant la qualité de l'image \textcolor{red}{(Source 2)}. Plusieurs méthodes peuvent être utilisées pour corriger cette aberrations. Parmi celles-ci, l'utilisation de lentilles anti-sphériques est possible. Ces lentilles limitent les courbes sphériques, telles qu'illustrées dans la figure suivante :
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.4]{lentilles_aspherique.png}
+  \caption{Image de lentilles de forme anti-sphériques \textcolor{red}{(Source 3)}.}
+  \label{lentilles_antisph}
+\end{figure}
+
+Une autre méthode pouvant diminuer les aberrations sphériques correspond à utiliser un système optique symétrique. Cette méthode consiste à placer deux lentilles de sorte que les aberrations créées par la première lentille soient corrigées par la deuxième lentille, souvent placée afin que les deux lentilles se miroitent.
+
+En ce qui concerne la seconde aberration mentionnée, soit celle chromatique, celle-ci surviennent lorsque de la réfraction des rayons sur les lentilles. En effet, les différentes longueurs d'onde de la lumière, dû à leur diverse indice de réfraction, ne se focalisent pas au même point \textcolor{red}{(Source 2)}. Il existe deux types d'aberrations chromatiques, soit les longitudinales et les transversales. Dans le cas des caméras, les transversales sont les plus communes. Celles-ci résultent du décalage latéral des couleurs par rapport au point de focalisation \textcolor{red}{(Source 4)}. Une méthode de correction de ce type d'aberration est d'utiliser des verres comportant des caractéristiques qui compensent la réfraction des différentes longueurs d'onde telles que des lentilles achromatiques ou des lentilles à gradient d'indice.
+
+% Source 1 : https://www.canon-europe.com/pro/infobank/aperture/
+
+% Source 2 : https://www.edmundoptics.fr/knowledge-center/application-notes/imaging/how-aberrations-affect-machine-vision-lenses/
+
+% Source 3 : https://www.edmundoptics.fr/knowledge-center/trending-in-optics/aspheric-lens-takeover/
+
+% Source 4 : https://ressources.univ-lemans.fr/AccesLibre/UM/Pedago/physique/02/optiquecours/aberchro.html
+
 
 \section{Conclusion}
 
