@@ -3,6 +3,9 @@ import numpy as np
 import matplotlib.pyplot as plt
 from statistics import mean, stdev
 import pandas as pd
+import math
+
+taille_reelle_pixel = 3.6e-3
 
 # Étape 1 : Charger l'image
 image = cv2.imread('C:/Users/tomde/Desktop/Cours/Autonme 2024/Optique/Laboratoire 2/Res/res_1m_min.png')
@@ -175,8 +178,8 @@ for i in range(1, len(rectangle_lengths)):
 if current_group:
     grouped_lengths.append(current_group)
 
-# Associer chaque groupe à une taille en mm (1mm, 2mm, 25mm, 50mm)
-group_to_size = {1: '1mm', 2: '2mm', 3: '10mm', 4: '25mm', 5: '50mm'}
+# Associer chaque groupe à une taille en mm (1mm, 2mm, 10mm, 25mm, 50mm)
+group_to_size = {1: '1', 2: '2', 3: '10', 4: '25', 5: '50'}
 
 # Création des colonnes pour la taille du groupe, la moyenne et l'écart-type
 data = []
@@ -191,13 +194,26 @@ for idx, group in enumerate(grouped_lengths, 1):
     size = group_to_size.get(idx, "Inconnu")
     data.append([size, group_mean, group_std])
 
-
 # Création du tableau avec pandas
 df = pd.DataFrame(data, columns=['Taille (mm)', 'Moyenne (pixels)', 'Écart-type (pixels)'])
 
+# Calcul de la résolution (taille en mm / moyenne en pixels)
+df['Taille (mm)'] = df['Taille (mm)'].astype(float)  # Convertir la taille en numérique
+df['Grossissement (mm/pixel)'] = (df['Moyenne (pixels)'] * taille_reelle_pixel)/df['Taille (mm)']
+
+# Calcul de la moyenne et de l'écart-type des résolutions
+grossissement_mean = df['Grossissement (mm/pixel)'].mean()
+grossissement_std = df['Grossissement (mm/pixel)'].std()
+
+if math.isnan(grossissement_std):
+    grossissement_std = 0
+
+# Afficher le tableau des statistiques de résolution
 print(df)
+print(f"\nMoyenne du grossissement : {grossissement_mean:.6f}")
+print(f"Écart-type du grossissement : {grossissement_std:.6f}")
 
-
+# Sauvegarder l'image modifiée
 output_image_path = 'C:/Users/tomde/Desktop/Cours/Autonme 2024/Optique/Laboratoire 2/Res/rectangles_detectes_min.png'
 cv2.imwrite(output_image_path, image_contours)
 
@@ -209,5 +225,5 @@ output_latex_path = 'C:/Users/tomde/Desktop/Cours/Autonme 2024/Optique/Laboratoi
 with open(output_latex_path, 'w') as f:
     f.write(latex_table)
 
-print(f"Image sauvegardée : {output_image_path}")
-print(f"Tableau LaTeX sauvegardé : {output_latex_path}")
+#print(f"Image sauvegardée : {output_image_path}")
+#print(f"Tableau LaTeX sauvegardé : {output_latex_path}")
