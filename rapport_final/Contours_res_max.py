@@ -200,19 +200,35 @@ for idx, group in enumerate(grouped_lengths, 1):
 # Création du tableau avec pandas
 df = pd.DataFrame(data, columns=['Taille (mm)', 'Moyenne (pixels)', 'Écart-type (pixels)'])
 
+print(df)
+
 # Calcul de la résolution (taille en mm / moyenne en pixels)
+df['Taille (mm)'] = df['Taille (mm)'].astype(float)  # Convertir la taille en numérique
+df['Résolution (mm/pixel)'] = df['Taille (mm)'] / df['Moyenne (pixels)']
+
+# Calcul de la moyenne et de l'écart-type des résolutions
+resolution_mean = df['Résolution (mm/pixel)'].mean()
+resolution_std = df['Résolution (mm/pixel)'].std()
+
+if math.isnan(resolution_std):
+    resolution_std = 0
+
+# Afficher le tableau des statistiques de résolution
+print(f"\nMoyenne de la résolution : {resolution_mean:.6f} mm/pixel")
+print(f"Écart-type de la résolution : {resolution_std:.6f} mm/pixel")
+
+# Calcul du grossissement
 df['Taille (mm)'] = df['Taille (mm)'].astype(float)  # Convertir la taille en numérique
 df['Grossissement (mm/pixel)'] = (df['Moyenne (pixels)'] * taille_reelle_pixel)/df['Taille (mm)']
 
-# Calcul de la moyenne et de l'écart-type des résolutions
+# Calcul de la moyenne et de l'écart-type du grossissement
 grossissement_mean = df['Grossissement (mm/pixel)'].mean()
 grossissement_std = df['Grossissement (mm/pixel)'].std()
 
 if math.isnan(grossissement_std):
     grossissement_std = 0
 
-# Afficher le tableau des statistiques de résolution
-print(df)
+# Afficher le tableau des statistiques du grossissement
 print(f"\nMoyenne du grossissement : {grossissement_mean:.6f}")
 print(f"Écart-type du grossissement : {grossissement_std:.6f}")
 
