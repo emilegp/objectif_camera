@@ -355,9 +355,35 @@ Enfin, ce vignettage est aussi modéré, voir fort. On voit une grande région
 assombrie à gauche, mais moins définie qu'à la figure \ref{vig_m_max}.
 
 \subsection{Facteur de zoom}
-\textcolor{red}{[TODO Tom]} 
-% TODO par Tom : Utiliser les tailles physiques des pixels pour voir la taille de
-% la cible a grossi de quel facteur
+Le facteur de zoom est un rapport entre le grossissement maximal et minimal du système. Le grossissement pouvant être mit en lien avec la résolution comme : 
+
+\begin{equation*}
+    g = \frac{taille \: pixel}{r}
+\end{equation*}
+
+Or la résolution étant elle même un rapport entre la taille d'un objet dans l'espace réel et pixel le facteur de grossissement est définit comme : 
+
+\begin{equation*}
+    X = \frac{g_{max}}{g_{min}} = \biggl(\frac{nombre \: de \: pixels \: max}{nombre \: de \: pixels \: min}\biggr)_{ref}
+\end{equation*}
+
+Etant donné le jeu de donné présenté dans les tableaux \ref{tige_min} et \ref{tige_max} le système à pour facteur de grossissement : 
+
+\begin{equation*}
+    X \approx \frac{46.05}{21.50} \pm \Delta X \approx 2.14 \pm \Delta X
+\end{equation*}
+
+Où l'écart-type $\Delta G$ est exprimé comme : 
+
+\begin{equation*}
+    \Delta X = 2.14 \cdot \sqrt{\biggl(\frac{1.345535}{46.048563}\biggr)^2 + \biggl(\frac{1.516575}{21.500000}\biggr)^2} \approx 0.16
+\end{equation*}
+
+Ce qui donne comme résultat final : 
+
+\begin{equation*}
+    X \approx 2.14 \pm 0.16
+\end{equation*}
 
 \subsection{Tableau des caractéristiques}
 
