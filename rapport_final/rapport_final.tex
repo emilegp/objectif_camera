@@ -196,29 +196,115 @@ $\delta_{z,max}= 0.463$m.
 \subsection{Analyse de résolution}
  
 Afin d'analyser la résolution de la caméra, deux photos de la cible ont été prises
-au focus de la caméra à 1m, autant pour le zoom minimal que pour le zoom maximal :
+au focus de la caméra à 1m, autant pour le zoom minimal que pour le zoom maximal : 
 
-\begin{figure}[H]
-  \centering
-  \includegraphics[scale=0.3]{res_1m_min.png}
-  \caption{Photo de l'objet au focus de 1m pour le zoom minimal.}
-  \label{res_min}
+\begin{figure}[h!]
+    \centering
+    \begin{minipage}[t]{0.47\linewidth}
+        \centering
+        \includegraphics[scale=0.22]{res_1m_min.png}
+        \caption{Photo de l'objet au focus de 1m pour le zoom minimal.}
+        \label{res_min}
+    \end{minipage}\hfill
+    \begin{minipage}[t]{0.5\linewidth}
+        \centering
+        \includegraphics[scale=0.22]{res_1m_max.png}
+        \caption{Photo de l'objet au focus de 1m pour le zoom maximal.}
+        \label{res_max}
+    \end{minipage}
 \end{figure}
 
-\begin{figure}[H]
-  \centering
-  \includegraphics[scale=0.3]{res_1m_max.png}
-  \caption{Photo de l'objet au focus de 1m pour le zoom maximal.}
-  \label{res_max}
+La résolution de ces images peut être définie de façon générale comme étant : 
+
+\begin{equation}
+    r = \frac{taille \: de \: r\textit{é}f\textit{é}rence}{nombre \: de \: pixels} \: [L\cdot pixels^{-1}]
+    \label{r}
+\end{equation}
+
+La taille de référence correspond à une dimension connue de l'espace réel. Sur les figures \ref{res_min} et \ref{res_max} elle est représentée par les barres de dimensions fixe : 1 mm, 2 mm, 10 mm, 25 mm et 50 mm. Pour se ramener à l'équation \ref{r} il est donc nécessaire de comptabiliser le nombre de pixels occupé par chacune de ces tiges, ce qui est possible grâce à un programme python, disponible en annexe. Les figures \ref{detec_min} et \ref{detec_max} présente les contours détectés pour chacune des images présentées en figure \ref{res_min} et \ref{res_max}
+
+\begin{figure}[h!]
+    \centering
+    \begin{minipage}[t]{0.46\linewidth}
+        \centering
+        \includegraphics[scale=0.17]{rectangles_detectes_min.png}
+        \caption{Contours obtenus sur les tiges de références le zoom minimal.}
+        \label{detec_min}
+    \end{minipage}\hfill
+    \begin{minipage}[t]{0.48\linewidth}
+        \centering
+        \includegraphics[scale=0.17]{rectangles_detectes_max.png}
+        \caption{Contours obtenus sur les tiges de références le zoom maximal.}
+        \label{detec_max}
+    \end{minipage}
 \end{figure}
-\textcolor{red}{[TODO Tom]} 
+
+Les données "dimensions" représentées en pixels ont été répertoriées dans des tableaux
+
+\begin{table}[h!]
+\centering
+\scalebox{1}{ % Ajustez le facteur de mise à l'échelle ici (0.8 par exemple)
+\begin{tabular}{|l|l|l|l|}
+\hline
+\textbf{Taille réelle (mm)} & \textbf{Nombre d'échantillons} & \textbf{Moyenne (pixels)} & \textbf{Écart-type (pixels)} \\ \hline
+1                           & 6 &  21.500000                & 1.516575                     \\ \hline
+2                           & 6 & 43.222657                & 4.664085                     \\ \hline
+10                          & 1 & 174.214767               & 0.000000                     \\ \hline
+25                          & 1 & 432.901978               & 0.000000                     \\ \hline
+50                          & 1 & 866.068909               & 0.000000                     \\ \hline
+\end{tabular}%
+}
+\caption{Tableau du nombre de pixels en fonction des tiges de référence pour le zoom minimum.}
+\label{tige_min}
+\end{table}
+
+\begin{table}[h!]
+\centering
+\scalebox{1}{ % Ajustez le facteur de mise à l'échelle ici (0.8 par exemple)
+\begin{tabular}{|l|l|l|l|}
+\hline
+\textbf{Taille réelle (mm)} & \textbf{Nombre d'échantillons} & \textbf{Moyenne (pixels)} & \textbf{Écart-type (pixels)} \\ \hline
+1                           & 2 & 46.048563                 & 1.345535                    \\ \hline
+\end{tabular}%
+}
+\caption{Tableau du nombre de pixels en fonction des tiges de référence pour le zoom maximum.}
+\label{tige_max}
 
 
-% TODO par Tom : combien de pixels pour les cibles -> taille d'un pixel, 
-% analyse d'incertitude (soit donner une incertitude sur les cibles, soit
-% faire étude stat sur quelquues mesures de pixels, soit les deux).
+\end{table}
 
-% important de décrire le processus et les calculs
+Dans ces tableaux les données ont été traitées de façons statistiques en fonction du nombre d'échantillons et de leur valeur. En les mettant ensuite en lien avec l'équation \ref{r} il est possible d'en déduire des valeurs de résolution. Le tableau \ref{table_res} présente les résolutions obtenues en fonction des positions de zoom. 
+
+\begin{table}[h!]
+\centering
+\scalebox{1}{ % Ajustez le facteur de mise à l'échelle ici (0.8 par exemple)
+\begin{tabular}{|l|l|l|}
+\hline
+\textbf{Zoom} & \textbf{Résolution (mm/pixel)} & \textbf{Écart-type (résolution)} \\ \hline
+Min                           & 0.053133               & 0.006156                    \\ \hline
+Max                           & 0.021716                 & 0.000000                    \\ \hline
+\end{tabular}%
+}
+\caption{Tableau de la résolution en fonction de la position du zoom.}
+\label{max_patron}
+\end{table}
+
+Les statistiques présentées dans ce tableaux n'ont pas été mise directement en relation avec celle des tableaux \ref{tige_min} et \ref{tige_max}, elles ne représentent que celles obtenues grâce au calcul des résolutions pour les différentes tiges de référence. Ces résultats sont très proches de ceux obtenus de façon théorique dans le rapport préliminaire malgré un facteur d'échelle non explicité sur les graphiques du rapport préliminaire. Le tableau \ref{écart} présente les écarts entre les valeurs théoriques et expérimentales. 
+
+\begin{table}[h!]
+\centering
+\scalebox{1}{ % Ajustez le facteur de mise à l'échelle ici (0.8 par exemple)
+\begin{tabular}{|l|l|l|}
+\hline
+\textbf{Résolution théorique} & \textbf{Résolution expérimentale} & \textbf{Écart (absolu)} \\ \hline
+0.050                           & 0.053133               & 0.003                   \\ \hline
+0.023 \textbf{(A VERIFIER)}               & 0.021716                 & 0.001                   \\ \hline
+\end{tabular}%
+}
+\caption{Tableau des écarts entre les valeurs théoriques et expérimentales.}
+\label{écart}
+\end{table}
+
 
 \subsection{Vignettage}
 
