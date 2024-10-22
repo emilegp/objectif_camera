@@ -4,7 +4,7 @@
 \usepackage{graphicx}
 \usepackage{etoolbox}
 \apptocmd{\sloppy}{\hbadness 10000\relax}{}{}
-% \usepackage[numbers]{natbib}
+\usepackage[numbers]{natbib}
 \usepackage[T1]{fontenc}
 \usepackage{ragged2e}
 \usepackage[french]{babel}
@@ -198,17 +198,17 @@ $\delta_{z,max}= 0.463$m.
 Afin d'analyser la résolution de la caméra, deux photos de la cible ont été prises
 au focus de la caméra à 1m, autant pour le zoom minimal que pour le zoom maximal : 
 
-\begin{figure}[h!]
+\begin{figure}[H]
     \centering
     \begin{minipage}[t]{0.47\linewidth}
         \centering
-        \includegraphics[scale=0.22]{res_1m_min.png}
+        \includegraphics[scale=0.21]{res_1m_min.png}
         \caption{Photo de l'objet au focus de 1m pour le zoom minimal.}
         \label{res_min}
     \end{minipage}\hfill
     \begin{minipage}[t]{0.5\linewidth}
         \centering
-        \includegraphics[scale=0.22]{res_1m_max.png}
+        \includegraphics[scale=0.21]{res_1m_max.png}
         \caption{Photo de l'objet au focus de 1m pour le zoom maximal.}
         \label{res_max}
     \end{minipage}
@@ -217,23 +217,23 @@ au focus de la caméra à 1m, autant pour le zoom minimal que pour le zoom maxim
 La résolution de ces images peut être définie de façon générale comme étant : 
 
 \begin{equation}
-    r = \frac{taille \: de \: r\textit{é}f\textit{é}rence}{nombre \: de \: pixels} \: [L\cdot pixels^{-1}]
+  r = \frac{\text{taille de référence}}{\text{nombre de pixels}} \: [L\cdot \text{pixels} ^{-1}]
     \label{r}
 \end{equation}
 
-La taille de référence correspond à une dimension connue de l'espace réel. Sur les figures \ref{res_min} et \ref{res_max} elle est représentée par les barres de dimensions fixe : 1 mm, 2 mm, 10 mm, 25 mm et 50 mm. Pour se ramener à l'équation \ref{r} il est donc nécessaire de comptabiliser le nombre de pixels occupés par chacune de ces tiges, ce qui est possible grâce à un programme python, disponible en annexe. Les figures \ref{detec_min} et \ref{detec_max} présentent les contours détectés pour chacune des images présentées en figure \ref{res_min} et \ref{res_max}
+La taille de référence correspond à une dimension connue de l'espace réel. Sur les figures \ref{res_min} et \ref{res_max} elle est représentée par les barres de dimensions fixe : 1 mm, 2 mm, 10 mm, 25 mm et 50 mm. Pour se ramener à l'équation \ref{r} il est donc nécessaire de comptabiliser le nombre de pixels occupés par chacune de ces tiges, ce qui est possible grâce à un programme Python, disponible en annexe. Les figures \ref{detec_min} et \ref{detec_max} présentent les contours détectés pour chacune des images présentées en figure \ref{res_min} et \ref{res_max}
 
-\begin{figure}[h!]
+\begin{figure}[H]
     \centering
     \begin{minipage}[t]{0.46\linewidth}
         \centering
-        \includegraphics[scale=0.17]{rectangles_detectes_min.png}
+        \includegraphics[scale=0.15]{rectangles_detectes_min.png}
         \caption{Contours obtenus sur les tiges de références le zoom minimal.}
         \label{detec_min}
     \end{minipage}\hfill
     \begin{minipage}[t]{0.48\linewidth}
         \centering
-        \includegraphics[scale=0.17]{rectangles_detectes_max.png}
+        \includegraphics[scale=0.15]{rectangles_detectes_max.png}
         \caption{Contours obtenus sur les tiges de références le zoom maximal.}
         \label{detec_max}
     \end{minipage}
@@ -241,7 +241,7 @@ La taille de référence correspond à une dimension connue de l'espace réel. S
 
 Les données "dimensions" représentées en pixels ont été répertoriées dans les tableaux suivants.
 
-\begin{table}[h!]
+\begin{table}[H]
 \centering
 \scalebox{1}{ % Ajustez le facteur de mise à l'échelle ici (0.8 par exemple)
 \begin{tabular}{|l|l|l|l|}
@@ -258,7 +258,7 @@ Les données "dimensions" représentées en pixels ont été répertoriées dans
 \label{tige_min}
 \end{table}
 
-\begin{table}[h!]
+\begin{table}[H]
 \centering
 \scalebox{1}{ % Ajustez le facteur de mise à l'échelle ici (0.8 par exemple)
 \begin{tabular}{|l|l|l|l|}
@@ -275,7 +275,7 @@ Ces écarts peuvent être causés par de nombreux facteurs, notamment la qualit�
 
 Dans ces tableaux, les données ont été traitées de façons statistiques en fonction du nombre d'échantillons et de leur valeur. En les mettant, ensuite, en lien avec l'équation \ref{r}, il est possible d'en déduire des valeurs de résolution. Le tableau \ref{max_patron} présente les résolutions obtenues en fonction des positions de zoom. 
 
-\begin{table}[h!]
+\begin{table}[H]
 \centering
 \scalebox{1}{ % Ajustez le facteur de mise à l'échelle ici (0.8 par exemple)
 \begin{tabular}{|l|l|l|}
@@ -291,14 +291,14 @@ Max                           & 0.021716                 & 0.000000             
 
 Les statistiques présentées dans ce tableau n'ont pas été mises directement en relation avec celle des tableaux \ref{tige_min} et \ref{tige_max}. Elles ne représentent que celles obtenues grâce au calcul des résolutions pour les différentes tiges de référence. Ces résultats sont très proches de ceux obtenus de façon théorique dans le rapport préliminaire malgré un facteur d'échelle non explicité sur les graphiques du rapport préliminaire. Le tableau \ref{écart} présente les écarts entre les valeurs théoriques et expérimentales. 
 
-\begin{table}[h!]
+\begin{table}[H]
 \centering
 \scalebox{1}{ % Ajustez le facteur de mise à l'échelle ici (0.8 par exemple)
 \begin{tabular}{|l|l|l|}
 \hline
 \textbf{Résolution théorique} & \textbf{Résolution expérimentale} & \textbf{Écart (absolu)} \\ \hline
 0.050                           & 0.053133               & 0.003                   \\ \hline
-0.023 \textbf{(A VERIFIER)}               & 0.021716                 & 0.001                   \\ \hline
+0.023               & 0.021716                 & 0.001                   \\ \hline
 \end{tabular}%
 }
 \caption{Tableau des écarts entre les valeurs théoriques et expérimentales.}
@@ -358,13 +358,13 @@ assombrie à gauche, mais moins définie qu'à la figure \ref{vig_m_max}.
 Le facteur de zoom est un rapport entre le grossissement maximal et minimal du système. Le grossissement peut être mit en lien avec la résolution comme : 
 
 \begin{equation*}
-    g = \frac{taille \: pixel}{r}
+  g = \frac{\text{taille pixel}}{r}
 \end{equation*}
 
 Or, la résolution étant, elle même, un rapport entre la taille d'un objet dans l'espace réel et pixel, le facteur de grossissement est défini comme : 
 
 \begin{equation*}
-    X = \frac{g_{max}}{g_{min}} = \biggl(\frac{nombre \: de \: pixels \: max}{nombre \: de \: pixels \: min}\biggr)_{ref}
+  X = \frac{g_{max}}{g_{min}} = \biggl(\frac{\text{nombre de pixels max}}{\text{nombre de pixels min}}\biggr)_{ref}
 \end{equation*}
 
 Étant donné le jeu de données présenté dans les tableaux \ref{tige_min} et \ref{tige_max}, le système a pour facteur de grossissement : 
@@ -373,7 +373,7 @@ Or, la résolution étant, elle même, un rapport entre la taille d'un objet dan
     X \approx \frac{46.05}{21.50} \pm \Delta X \approx 2.14 \pm \Delta X
 \end{equation*}
 
-Où l'écart-type $\Delta G$ est exprimé comme : 
+Où l'écart-type $\Delta X$ est exprimé comme : 
 
 \begin{equation*}
     \Delta X = 2.14 \cdot \sqrt{\biggl(\frac{1.345535}{46.048563}\biggr)^2 + \biggl(\frac{1.516575}{21.500000}\biggr)^2} \approx 0.16
@@ -392,10 +392,10 @@ Ce qui donne comme résultat final :
 \begin{tabular}{|l|l||l|l|l||c|}
 \hline
 \textbf{Distance objet} & \textbf{Zoom} & \textbf{Profondeur champ} & \textbf{Résolution} & \textbf{Vignettage} & \textbf{Facteur zoom} \\ \hline
-1m & min  & 1.528m & \textcolor{red}{[valeur]} & modéré & \multirow{4}{*}{g} \\ \cline{1-5}
-1m & max  & 0.463m & \textcolor{red}{[valeur]} & très fort & \\ \cline{1-5}
-Infini & min  & - & \textcolor{red}{[valeur]} & faible & \\ \cline{1-5}
-Infini & max  & - & \textcolor{red}{[valeur]} & fort & \\ \hline
+1m & min  & 1.528m & 0.053 $\pm$ 0.006 & modéré & \multirow{4}{*}{2.14 $\pm$ 0.16} \\ \cline{1-5}
+1m & max  & 0.463m & 0.02 $\pm $ 0 & très fort & \\ \cline{1-5}
+Infini & min  & - & - & faible & \\ \cline{1-5}
+Infini & max  & - & - & fort & \\ \hline
 \end{tabular}
 \caption{Tableau des principaux résultats acquis lors des manipulations.}
 \end{table}
@@ -424,7 +424,7 @@ de champ est fausse. Non seulement le comportement n'était pas constant avec le
 mais l'ordre de grandeur est, en réalité, plus près du mètre que du millimètre. Cette
 disparité s'explique facilement par l'omission de l'iris ajustable dans la simulation
 faite sur python. Cette dernière peut jouer le rôle d'ouverture d'arrêt, et, donc, avoir
-un impact direct sur la profondeur de champ \textcolor{red}{Source A}. Sans l'avoir 
+un impact direct sur la profondeur de champ \cite{leblond_semaine_2024}. Sans l'avoir 
 prise en considération, il est normal que l'hypothèse soit erronée.
 
 % Source A : ndc L8-s5
@@ -436,7 +436,10 @@ trouvée par simulation ne peut toutefois être confirmé, car seulement les deu
 de zoom ont été testés. Cela implique donc qu'une augmentation de la distance $L_1 - L_2$ implique une augmentation du zoom.
 
 Cette dernière conclusion aide à redéfinir la troisième hypothèse : plus le zoom est
-grand, moins la résolution est importante. \textcolor{red}{A FINIR : Emile}.
+grand, moins la résolution est importante. Tel que prédit par l'hypothèse, ce comportement
+est observé. La résolution au zoom maximal vaut moins que la moitié que celle du zoom minimal. Encore
+une fois, rien n'est confirmé sur le comportement entre ces zooms, mais il est quand même possible de
+confirmer l'hypothèse.
 
 \subsection{Sources d'erreurs}
 Les divergences des résultats par rapport aux hypothèses émises peuvent être expliquées par certaines causes d'erreurs. Une première cause possible correspond à l'éclairage inconstant de la pièce. Ces fluctuations, causées par l'ouverture et la fermeture de lumières, ont influencé les conditions d'illumination des objets photographiés, notamment en affectant l'exposition, le contraste et la netteté de l'image. Ensuite, lorsque la profondeur de champ a été observée, certaines des photos prises impliquaient de se tenir entre deux tables. Pour ce faire, une personne devait maintenir l'objet à la hauteur de la caméra, causant du mouvement dans la cible. Ce manque de stabilité dans ces prises a entraîné un décalage dans certaines des images. En effet, entre l'enregistrement de l'image et l'ajustement du paramètre observé, il est possible que le manque de stabilité ait provoqué des flous, altérant la qualité de l'image. 
@@ -446,33 +449,23 @@ De plus, l'ouverture de l'iris, correspondant à l'ouverture d'arrêt dans ce sy
 Finalement, une autre cause d'erreur possible est le délai dans l'acquisition des images. Puisque les photos ne s'enregistraient pas exactement au moment choisi, le délai entre l'enregistrement et la capture choisie peut avoir varié dû aux conditions externes, soient, par exemple, l'éclairage et le mouvement de la cible.
 
 \subsection{Réponses aux questions}
-Dans cette expérience, l'iris joue le rôle d'ouverture d'arrêt dans le système optique, c'est-à-dire de réguler la lumiosité passant à travers les lentilles. De cette manière, cette régulation permet à l'ouverture d'effectuer trois fonctions principales : le contrôle de l'exposition, de la profondeur de champ et des aberrations. De cette manière, dans un objectif commercial, l'iris est souvent utilisé pour ajuster l'expostion et, par le fait même, d'améliorer la profondeur de champ de manière précise. En effet, en limitant ou augmentant la lumière entrante, il est possible d'ajuster l'exposition de l'image. Cette variation d'exposition permet de contrôler la zone de netteté de l'objet, soit la profondeur de champ, et les rayons lumineux hors focaux, de sorte que la qualité de l'image soit améliorée en fonction de la taille \textcolor{red}{(Source 1)}. Bien que l'iris octroie plusieurs bénéfices, celui-ci n'est pas toujours nécessaire dans les systèmes optiques. Dans cette expérience, l'iris correspondait à l'ouverture d'arrêt, ce qui n'est pas toujours le cas dans tous les systèmes optiques. Ainsi, dans ces systèmes où l'ouverture d'arrêt correspond à un autre composant, la lumière est régulisée avec ou sans l'utilisation de l'iris.
+Dans cette expérience, l'iris joue le rôle d'ouverture d'arrêt dans le système optique, c'est-à-dire de réguler la lumiosité passant à travers les lentilles. De cette manière, cette régulation permet à l'ouverture d'effectuer trois fonctions principales : le contrôle de l'exposition, de la profondeur de champ et des aberrations. De cette manière, dans un objectif commercial, l'iris est souvent utilisé pour ajuster l'expostion et, par le fait même, d'améliorer la profondeur de champ de manière précise. En effet, en limitant ou augmentant la lumière entrante, il est possible d'ajuster l'exposition de l'image. Cette variation d'exposition permet de contrôler la zone de netteté de l'objet, soit la profondeur de champ, et les rayons lumineux hors focaux, de sorte que la qualité de l'image soit améliorée en fonction de la taille \cite{meyer_aperture_2023}. Bien que l'iris octroie plusieurs bénéfices, celui-ci n'est pas toujours nécessaire dans les systèmes optiques. Dans cette expérience, l'iris correspondait à l'ouverture d'arrêt, ce qui n'est pas toujours le cas dans tous les systèmes optiques. Ainsi, dans ces systèmes où l'ouverture d'arrêt correspond à un autre composant, la lumière est régulisée avec ou sans l'utilisation de l'iris.
 
-Les systèmes optiques, tel que les objectifs de caméra, peuvent entraîner des aberrations malgré l'utilisation d'une ouverture d'arrêt. Parmi les aberrations possibles, il n'existe pas directement d'aberrations plus fréquentes que d'autres. Cependant, deux aberrations communes correspondent aux aberrations sphériques et chromatiques transversales. Les aberrations sphériques surviennent lorsque les rayons se focalisent à des distances différentes dû à leur interaction avec les lentilles. En d'autres termes, en fonction du point de contact avec les lentilles ou les miroirs, les faisceaux ne se dirigent pas tout à fait au même point, diminuant la qualité de l'image \textcolor{red}{(Source 2)}. Plusieurs méthodes peuvent être utilisées pour corriger cette aberrations. Parmi celles-ci, l'utilisation de lentilles anti-sphériques est possible. Ces lentilles limitent les courbes sphériques, telles qu'illustrées dans la figure suivante :
+Les systèmes optiques, tel que les objectifs de caméra, peuvent entraîner des aberrations malgré l'utilisation d'une ouverture d'arrêt. Parmi les aberrations possibles, il n'existe pas directement d'aberrations plus fréquentes que d'autres. Cependant, deux aberrations communes correspondent aux aberrations sphériques et chromatiques transversales. Les aberrations sphériques surviennent lorsque les rayons se focalisent à des distances différentes dû à leur interaction avec les lentilles. En d'autres termes, en fonction du point de contact avec les lentilles ou les miroirs, les faisceaux ne se dirigent pas tout à fait au même point, diminuant la qualité de l'image \cite{hollows_aberrations_2023}. Plusieurs méthodes peuvent être utilisées pour corriger cette aberrations. Parmi celles-ci, l'utilisation de lentilles anti-sphériques est possible. Ces lentilles limitent les courbes sphériques, telles qu'illustrées dans la figure suivante :
 
 \begin{figure}[H]
   \centering
   \includegraphics[scale=0.4]{lentilles_aspherique.png}
-  \caption{Image de lentilles de forme anti-sphériques \textcolor{red}{(Source 3)}.}
+  \caption{Image de lentilles de forme anti-sphériques \cite{leonov_aspheric_2018}}
   \label{lentilles_antisph}
 \end{figure}
 
 Une autre méthode pouvant diminuer les aberrations sphériques correspond à utiliser un système optique symétrique. Cette méthode consiste à placer deux lentilles de sorte que les aberrations créées par la première lentille soient corrigées par la deuxième lentille, souvent placée afin que les deux lentilles se miroitent.
 
-En ce qui concerne la seconde aberration mentionnée, soit celle chromatique, celle-ci surviennent lorsque de la réfraction des rayons sur les lentilles. En effet, les différentes longueurs d'onde de la lumière, dû à leur diverse indice de réfraction, ne se focalisent pas au même point \textcolor{red}{(Source 2)}. Il existe deux types d'aberrations chromatiques, soit les longitudinales et les transversales. Dans le cas des caméras, les transversales sont les plus communes. Celles-ci résultent du décalage latéral des couleurs par rapport au point de focalisation \textcolor{red}{(Source 4)}. Une méthode de correction de ce type d'aberration est d'utiliser des verres comportant des caractéristiques qui compensent la réfraction des différentes longueurs d'onde telles que des lentilles achromatiques ou des lentilles à gradient d'indice.
-
-% Source 1 : https://www.canon-europe.com/pro/infobank/aperture/
-
-% Source 2 : https://www.edmundoptics.fr/knowledge-center/application-notes/imaging/how-aberrations-affect-machine-vision-lenses/
-
-% Source 3 : https://www.edmundoptics.fr/knowledge-center/trending-in-optics/aspheric-lens-takeover/
-
-% Source 4 : https://ressources.univ-lemans.fr/AccesLibre/UM/Pedago/physique/02/optiquecours/aberchro.html
-
+En ce qui concerne la seconde aberration mentionnée, soit celle chromatique, celle-ci surviennent lorsque de la réfraction des rayons sur les lentilles. En effet, les différentes longueurs d'onde de la lumière, dû à leur diverse indice de réfraction, ne se focalisent pas au même point \cite{hollows_aberrations_2023}. Il existe deux types d'aberrations chromatiques, soit les longitudinales et les transversales. Dans le cas des caméras, les transversales sont les plus communes. Celles-ci résultent du décalage latéral des couleurs par rapport au point de focalisation \cite{rousseau_aberrations_2024}. Une méthode de correction de ce type d'aberration est d'utiliser des verres comportant des caractéristiques qui compensent la réfraction des différentes longueurs d'onde telles que des lentilles achromatiques ou des lentilles à gradient d'indice.
 
 \section{Conclusion}
 En conclusion, le but de cette expérience consistait à caractériser l'objectif de caméra simple, composé de trois lentilles distinctes, à travers une analyse de la résolution, de la profondeur de champ et d'un facteur zoom, en fonction de la distance objet. À partir de plusieurs images prises à distances variables, soit minimale et maximale, un rapport entre les tailles de référence et le nombre de pixels a été réalisé, permettant d'obtenir des résultats pour les paramètres d'importance. En analysant les données amassées, les hypothèses émises précédemment ont, ensuite, pu être vérifiées. Pour justifier les divergences entre les hypothèses émises et les résultats récoltés, quelques erreurs ont été notées telles que l'inconsistance de l'éclairage, l'iris, jouant le rôle d'ouverture d'arrêt, et le délai dans l'acquisition des images. En dépit des légères différences dans les résultats, l'expérience a permis de visualiser diverses aberrations optiques possibles et de comprendre de manière pratique le fonctionnement des objectifs de caméra.
-
 
 \clearpage
 \section{Annexe}
@@ -978,7 +971,7 @@ with open(output_latex_path, 'w') as f:
 
 \clearpage
 
-% \bibliographystyle{unsrtnat}
-% \bibliography{My_Library}
+\bibliographystyle{unsrtnat}
+\bibliography{camera_final.bib}
 
 \end{document}
